@@ -4,48 +4,49 @@
 #include <time.h>
 #include <Windows.h>
 #include <conio.h>
-#define wordmax 103//´Ü¾îÀÇ °³¼ö
-#define wordtime 23000//´Ü¾î°¡ ¶ß´Â ¼Óµµ
+#define wordmax 103//ë‹¨ì–´ì˜ ê°œìˆ˜
+#define wordtime 23000//ë‹¨ì–´ê°€ ëœ¨ëŠ” ì†ë„
 
-time_t startTime = 0, endTime = 0;// °ÔÀÓ ½Ã°£ Á¦ÇÑ
+time_t startTime = 0, endTime = 0;// ê²Œì„ ì‹œê°„ ì œí•œ
 int gap;
 
-void gotoxy(int x, int y)//Ä¿¼­ À§Ä¡ Á¶Á¤ ÇÔ¼ö
+void gotoxy(int x, int y)//ì»¤ì„œ ìœ„ì¹˜ ì¡°ì • í•¨ìˆ˜
 {
 	COORD Pos = { x - 1, y - 1 };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
 
-void help();// µµ¿ò¸»
-void gamemain();// °ÔÀÓ¸ŞÀÎ
-void printword();//´Ü¾î¶ß°Ô ÇØÁÖ´Â ÇÔ¼ö
-void scanword();//´Ü¾î¸¦ ÀÔ·Â ¹Ş´Â ÇÔ¼ö
-void design();//°ÔÀÓ µğÀÚÀÎ
-void start();//°ÔÀÓ ½ÃÀÛ ÃÊ±â È­¸é
-void bestscore();//ÃÖ°íÁ¡¼ö °»½Å
-void removeCursor();// printf¿¡¼­ ´Ü¾î¸¦ ¶ß°ÔÇÒ¶§ Ä¿¼­ Á¦°Å
+void help();// ë„ì›€ë§
+void gamemain();// ê²Œì„ë©”ì¸
+void printword();//ë‹¨ì–´ëœ¨ê²Œ í•´ì£¼ëŠ” í•¨ìˆ˜
+void scanword();//ë‹¨ì–´ë¥¼ ì…ë ¥ ë°›ëŠ” í•¨ìˆ˜
+void design();//ê²Œì„ ë””ìì¸
+void start();//ê²Œì„ ì‹œì‘ ì´ˆê¸° í™”ë©´
+void bestscore();//ìµœê³ ì ìˆ˜ ê°±ì‹ 
+void removeCursor();// printfì—ì„œ ë‹¨ì–´ë¥¼ ëœ¨ê²Œí• ë•Œ ì»¤ì„œ ì œê±°
 
-char word[256][256] = { "dog", "cat", "bottle", "phone", "robot", "green", "elephant", "include", "sky", "game", "hyomin", "jaemin", "max",//´Ü¾î DB
-"knife", "glass", "class", "art", "smart", "bell", "carry", "climb", "between", "blow", "album", "ago", "among", "animal", "any", "box",
-"and", "board", "body", "child", "classmate", "city", "boy", "bridge", "clean",
-"club", "coat", "bright", "coin", "chopstick", "coffee", "cold", "chance", "chalk", "chair", "cheap", "blue",
-"before", "bowl", "aunt", "as", "away", "bicycle", "church", "card", "hold",
-"chose", "come", "drink", "give", "get", "hurt", "lay","had", "feed", "lend", "met", "wsing", "throw", "wet", "tell",
-"set", "wind", "wear", "write", "spend", "stand", "worn", "win", "sweep", "account", "achieve", "across", "accept", "above", "ability", "abuse",
-"abnormal", "absurd", "acceptance", "according", "absent", "nation", "past", "value", "though", "person", "machine", "stand", "null" };
-int wordi[250];//ÇÑ ¹ø¶á ´Ü¾îµéÀº ¾È¶ß°Ô ÇØÁÖ±â À§ÇØ ¸¸µé¾î³ğ
-int x, y;// gotoxy ÀÇ x°ª°ú y°ª
-int i;//´Ü¾î ¼ö
+char word[256][256] = { "printf", "scanf", "int", "float", "double", "%d", "%f", "%lf", "return", ";", "&", "main", "#include",//ë‹¨ì–´ DB
+"void", "#define", "stdio.h", "stdlib.h", "unsigned", "malloc", "free", "char", "if", "switch", "else", "break", "default", "while", "for", "++",
+"--", "&&", "||", "NULL", "class", "cin", "cout", "endl", "new",
+"delete", "[]", "*", "=", "()", "time", "string", "strcmp", "getline", "gets", "sizeof", "temp",
+"extern", "register", "struct", "static", "goto", "do", "enum", "auto", "case",
+"const", "continue", "signed", "short", "friend", "public", "using","bool", "private", "true", "false", "typename", "union", "template", "protected",
+"clear", "time.h", "windows.h", "conio.h", "%s", "%c", "!=", "==", ">=", "<=", ">", "<", "iostream", "swap", "inline", "namespace",
+"ignore", "-", "+", "/", "%", "//", "/**/", ".", "->", "int", "float", "double", "char" };
+
+int wordi[250];//í•œ ë²ˆëœ¬ ë‹¨ì–´ë“¤ì€ ì•ˆëœ¨ê²Œ í•´ì£¼ê¸° ìœ„í•´ ë§Œë“¤ì–´ë†ˆ
+int x, y;// gotoxy ì˜ xê°’ê³¼ yê°’
+int i;//ë‹¨ì–´ ìˆ˜
 int j, k;
-int a;//´Ü¾î ¼ö ¿Í °°Àº ¼ö º¯¼ö
+int a;//ë‹¨ì–´ ìˆ˜ ì™€ ê°™ì€ ìˆ˜ ë³€ìˆ˜
 int s;//kbhit
-int c;//¹İº¹¹®¹è¿­
-int x2, y2;// x,y°ªÀ» ´Ù½Ã ºÒ·¯¿Ã ¶§ º¯¼ö
+int c;//ë°˜ë³µë¬¸ë°°ì—´
+int x2, y2;// x,yê°’ì„ ë‹¤ì‹œ ë¶ˆëŸ¬ì˜¬ ë•Œ ë³€ìˆ˜
 int g;
-int score1 = 0;//Á¡¼ö
-int h;//ÃÊ±âÈ­¸é¿¡¼­ ÀÔ·Â ¹ŞÀ»¶§ º¯¼ö
-int f;// »ö±ò
-int f2;// »ö±ò °ªÀ» ´Ù½Ã ºÒ·¯¿Ã¶§ º¯¼ö
+int score1 = 0;//ì ìˆ˜
+int h;//ì´ˆê¸°í™”ë©´ì—ì„œ ì…ë ¥ ë°›ì„ë•Œ ë³€ìˆ˜
+int f;// ìƒ‰ê¹”
+int f2;// ìƒ‰ê¹” ê°’ì„ ë‹¤ì‹œ ë¶ˆëŸ¬ì˜¬ë•Œ ë³€ìˆ˜
 int sword;
 int level = 1;
 int bestsc = 0;
@@ -74,7 +75,7 @@ int main() {
 		case 4: return 0; break;
 
 		default:
-			printf("¿Ã¹Ù¸¥ Å°°¡ ¾Æ´Õ´Ï´Ù!");
+			printf("ì˜¬ë°”ë¥¸ í‚¤ê°€ ì•„ë‹™ë‹ˆë‹¤!");
 			break;
 		}
 	}
@@ -86,7 +87,9 @@ int main() {
 
 void design() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-	printf("|---------------------------------------------------------------------------------------------------------------------|\n");
+	printf("|----------------------------------8bibim-------------------------------8bibim----------------------------------------|\n");
+	printf("|                             8bibim    8bibim                     8bibim    8bibim                                   |\n");
+	printf("|                                  8bibim                               8bibim                                        |\n");
 	printf("|                                                                                                                     |\n");
 	printf("|                                                                                                                     |\n");
 	printf("|                                                                                                                     |\n");
@@ -105,11 +108,9 @@ void design() {
 	printf("|                                                                                                                     |\n");
 	printf("|                                                                                                                     |\n");
 	printf("|                                                                                                                     |\n");
-	printf("|                                                                                                                     |\n");
-	printf("|                                                                                                                     |\n");
-	printf("|                                                                                                                     |\n");
-	printf("|---------------------------------------------------------------------------------------------------------------------|\n");
-	printf("|                                                                                                                     |\n");
+	printf("|                                         8bibim                   8bibim                                             |\n");
+	printf("|                                               8bibim       8bibim                                                   |\n");
+	printf("|*****************************************************8bibim**********************************************************|\n");
 	printf("|                                                                                                                     |\n");
 	printf("|                                                                                                                     |\n");
 	printf("|                                                                                                                     |\n");
@@ -120,31 +121,30 @@ void design() {
 
 
 }
-
 void help() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 	system("cls");
 	design();
 	gotoxy(40, 7);
-	printf("-»ç¹æÆÈ¹æ ¶ß´Â ´Ü¾îµéÀ» »¡¸® ÀÔ·ÂÇÏ¿© ¾ø¾ÖÁÖ¼¼¿ä!\n");
+	printf("-ì‚¬ë°©íŒ”ë°© ëœ¨ëŠ” ë‹¨ì–´ë“¤ì„ ë¹¨ë¦¬ ì…ë ¥í•˜ì—¬ ì—†ì• ì£¼ì„¸ìš”!\n");
 	gotoxy(40, 11);
-	printf("-»ö¸¶´Ù Á¡¼ö ¹èÁ¡ÀÌ ´Ù¸¨´Ï´Ù!");
+	printf("-ìƒ‰ë§ˆë‹¤ ì ìˆ˜ ë°°ì ì´ ë‹¤ë¦…ë‹ˆë‹¤!");
 	gotoxy(40, 12);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
-	printf("ÀÌ »ö : 150Á¡ ");
+	printf("ì´ ìƒ‰ : 150ì  ");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
-	printf("ÀÌ »ö : 200Á¡ ");
+	printf("ì´ ìƒ‰ : 200ì  ");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
-	printf("ÀÌ »ö : 250Á¡ ");
+	printf("ì´ ìƒ‰ : 250ì  ");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
-	printf("ÀÌ »ö : 300Á¡ ");
+	printf("ì´ ìƒ‰ : 300ì  ");
 	gotoxy(40, 14);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-	printf("-30ÃÊ µ¿¾È °ÔÀÓÀÌ ÁøÇàµË´Ï´Ù!! ³¡³ª¸é ÀÚµ¿À¸·Î Á¾·áµË´Ï´Ù.");
+	printf("-30ì´ˆ ë™ì•ˆ ê²Œì„ì´ ì§„í–‰ë©ë‹ˆë‹¤!! ëë‚˜ë©´ ìë™ìœ¼ë¡œ ì¢…ë£Œë©ë‹ˆë‹¤.");
 	gotoxy(40, 15);
-	printf("-ÃÖ°íÁ¡¼ö°¡ ÀúÀåµË´Ï´Ù. ¸ŞÀÎ¸Ş´º 3. Á¡¼öº¸±â¿¡¼­ È®ÀÎ °¡´ÉÇÕ´Ï´Ù.\n");
+	printf("-ìµœê³ ì ìˆ˜ê°€ ì €ì¥ë©ë‹ˆë‹¤. ë©”ì¸ë©”ë‰´ 3. ì ìˆ˜ë³´ê¸°ì—ì„œ í™•ì¸ ê°€ëŠ¥í•©ë‹ˆë‹¤.\n");
 	gotoxy(40, 16);
-	printf("-¾Æ¹«Å°³ª ´©¸£¸é ¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.\n");
+	printf("-ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ë©´ ë©”ì¸ ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.\n");
 
 	g = getch();
 	if (_kbhit)
@@ -163,10 +163,10 @@ void bestscore() {
 		bestsc = score1;
 	}
 	gotoxy(50, 7);
-	printf("ÃÖ°íÁ¡¼ö : %d", bestsc);
+	printf("ìµœê³ ì ìˆ˜ : %d", bestsc);
 
 	gotoxy(40, 13);
-	printf("¾Æ¹«Å°³ª ´©¸£¸é ¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.\n");
+	printf("ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ë©´ ë©”ì¸ ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.\n");
 	g = getch();
 	if (_kbhit)
 	{
@@ -178,17 +178,17 @@ void gamemain() {
 	system("cls");
 	design();
 	gotoxy(50, 9);
-	printf(" 3ÃÊ ÈÄ ½ÃÀÛ !!");
+	printf(" 3ì´ˆ í›„ ì‹œì‘ !!");
 	Sleep(1000);
 	system("cls");
 	design();
 	gotoxy(50, 9);
-	printf(" 2ÃÊ ÈÄ ½ÃÀÛ !!");
+	printf(" 2ì´ˆ í›„ ì‹œì‘ !!");
 	Sleep(1000);
 	system("cls");
 	design();
 	gotoxy(50, 9);
-	printf(" 1ÃÊ ÈÄ ½ÃÀÛ !!");
+	printf(" 1ì´ˆ í›„ ì‹œì‘ !!");
 	Sleep(1000);
 	system("cls");
 	design();
@@ -238,11 +238,11 @@ void scanword() {
 		int scanc;
 		endTime = clock();
 		gap = (float)(endTime - startTime) / (CLOCKS_PER_SEC);
-		if (gap > 30) { //°ÔÀÓÁö¼Ó½Ã°£ 30s
+		if (gap > 30) { //ê²Œì„ì§€ì†ì‹œê°„ 30s
 			system("cls");
 			design();
 			gotoxy(50, 11);
-			printf("---°Ô ÀÓ Á¾ ·á---");
+			printf("---ê²Œ ì„ ì¢… ë£Œ---");
 			Sleep(2000);
 			main();
 		}
@@ -293,7 +293,7 @@ void scanword() {
 						}
 						gotoxy(3, 2);
 						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
-						printf("ÇöÀçÁ¡¼ö :%d", score1);
+						printf("í˜„ì¬ì ìˆ˜ :%d", score1);
 
 
 					}
@@ -310,15 +310,15 @@ void start() {
 	system("cls");
 	design();
 	gotoxy(50, 9);
-	printf(" 1. °ÔÀÓ½ÃÀÛ                  \n");
+	printf(" 1. ê²Œì„ì‹œì‘                  \n");
 	gotoxy(50, 10);
-	printf(" 2. µµ¿ò¸»                  \n");
+	printf(" 2. ë„ì›€ë§                  \n");
 	gotoxy(50, 11);
-	printf(" 3. Á¡¼ö º¸±â                \n");
+	printf(" 3. ì ìˆ˜ ë³´ê¸°                \n");
 	gotoxy(50, 12);
-	printf(" 4. °ÔÀÓ Á¾·á                  \n");
+	printf(" 4. ê²Œì„ ì¢…ë£Œ                  \n");
 	gotoxy(50, 14);
-	printf("  Å°¸¦ ´©¸£¼¼¿ä                       \n");
+	printf("  í‚¤ë¥¼ ëˆ„ë¥´ì„¸ìš”                       \n");
 }
 
 void removeCursor()
