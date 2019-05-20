@@ -1,0 +1,16 @@
+#pragma once
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <windows.h>
+#include <time.h>
+void TP_menu();
+void CP_menu();
+void rank_menu();
+void printkoreanui();
+void printkrfirst();
+void printkrsecond();
+void printcodeui();
+void printcdfirst();
+void printcdsecond();
+void printcdthird();
