@@ -1,249 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
+
+#include "menu.h"
+#include <windows.h>
 
 /*타자 연습 메인 함수*/
-void TP_menu()
-{
-	while (1)
-	{
-	
-		int tp_menu;
-		printf("1. 긴 글 연습\n");
-		printf("2. 짧은 글 연습\n");
-		printf("3. 타자 연습 게임\n");
-		printf("4. 이전 메뉴로\n");
-		tp_menu = _getch();
 
-		switch (tp_menu) {
-		case '1':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("긴 글 연습 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");//잠시만 임시로 넣어둘게요^,^
-			}
-			break;
-		}
-			
-		case '2':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("짧은 글 연습 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-					
-				}
-			}
-			break;
-		}
-		case '3':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("게임 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-					
-				}
-			}
-			break;
-		}
-
-		case'4':
-			return;
-		}
-
-
-	}
-}
-void CP_menu()
-{
-	while (1)
-	{
-		
-		int cp_menu;
-		printf("1. C 연습\n");
-		printf("2. C++ 연습\n");
-		printf("3. 타자 연습 게임\n");
-		printf("4. 이전 메뉴로\n");
-		cp_menu = _getch();
-
-		switch (cp_menu) {
-		case '1':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("C 연습 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-					
-				}
-			}
-			break;
-		}
-
-		case '2':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("C++ 연습 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-					
-				}
-			}
-			break;
-		}
-		case '3':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("게임 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-				
-				}
-			}
-			break;
-		}
-
-		case'4':
-			return;
-		}
-
-
-	}
-
-
-	
-}
-
-void rank_menu()
-{
-	while (1)
-	{
-
-		int rank_menu;
-		printf("1. 일반 랭킹\n");
-		printf("2. 코딩 랭킹\n");
-		printf("3. 이전 메뉴로\n");
-		rank_menu = _getch();
-
-		switch (rank_menu) {
-		case '1':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("일반 랭킹 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-					
-				}
-			}
-			break;
-		}
-
-		case '2':
-		{
-			while (1)
-			{
-				system("cls");
-				printf("코딩 랭킹 실행\n");
-				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
-				if (_getch() == 27)
-				{
-					system("cls");
-					break;
-				}
-				else
-				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
-					
-				}
-			}
-		}
-		case '3':
-			return;
-
-
-
-		}
-
-
-	}
-}
 void main()
 {
 
 
 	while (1) {
 		{
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 		printf("............................................................................................,............................................\n");
 		printf(".......................................................................................,+7$?:.,..........................................\n");
 		printf("..................................................................................,., 7DNNNNN8,..........................................\n");
@@ -283,7 +50,7 @@ void main()
 		printf(".....................................        __/ | |             __/ |                                      .............................\n");
 		printf(".....................................       |___/|_|            |___/                                       .............................\n");
 
-
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 		printf("                                      ====================================================================\n");
 		printf("                                                                1 . 한글 타자 연습\n");
 		printf("                                                                2 . 코딩 타자 연습\n");
@@ -295,7 +62,7 @@ void main()
 		int main_menu;
 	
 		main_menu = _getch();
-		
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 		switch (main_menu) {
 		case '1':
 			system("cls");
@@ -323,8 +90,8 @@ void main()
 				}
 				else
 				{
-					printf("잘못 입력하셨습니다.\n");
-					system("pause");
+					system("Cls");
+					continue;
 					
 				}
 			}
@@ -334,6 +101,9 @@ void main()
 			printf("시스템 종료\n");
 			system("pause");
 			return;
+		default:
+			system("cls");
+			break;
 		}
 
 	}
