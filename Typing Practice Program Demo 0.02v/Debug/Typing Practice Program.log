@@ -1,0 +1,77 @@
+﻿  Source.c
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(542): warning C4013: 'pokemonsound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(574): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(575): warning C4244: '=': 'double'에서 '__int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(583): warning C4244: '함수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(584): warning C4477: 'fprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 '__int64'입니다.
+  c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(584): note: 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+  c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(584): note: 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(418): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(550): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(562): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(567): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(571): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(100): note: 'wcscat' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(397): warning C4101: 'Random' :참조되지 않은 지역 변수입니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(615): warning C4013: 'typingsound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(760): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(761): warning C4244: '=': 'double'에서 '__int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(621): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(752): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(756): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(758): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(856): warning C4013: 'titlesound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(911): warning C4013: 'tetsound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(912): warning C4013: 'startgame'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(804): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(805): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(806): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(807): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(808): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(809): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(810): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+  ui.c
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(56): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(113): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(177): warning C4244: '=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(180): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
+  c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(180): note: 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+  c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(180): note: 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(244): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(252): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(280): warning C4013: 'typingsound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(331): warning C4013: 'pokemonsound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(383): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(444): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(504): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1197): note: 'fscanf' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(513): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(517): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\ui.c(593): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  코드를 생성하고 있습니다...
+c:\users\youns\onedrive\바탕 화면\typing practice program demo 0.01v\source.c(586): warning C4715: 'Long_sentence_practice': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  Typing Practice Program.vcxproj -> C:\Users\youns\OneDrive\바탕 화면\Typing Practice Program Demo 0.01v\Debug\Typing Practice Program.exe

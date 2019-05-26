@@ -1,0 +1,16 @@
+/*example*/
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_CQUEUE_SIZE 8
+typedef struct {
+	int key;
+}element;
+/*difficult*/
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_CQUEUE_SIZE 8
+typedef struct {
+	int key;
+}element;
+
+
