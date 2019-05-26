@@ -1,0 +1,35 @@
+/*example*/
+#include 
+<stdio.h>
+<stdlib.h>
+#define 
+MAX_CQUEUE_SIZE 8
+typedef struct
+int
+element
+;
+fda
+das
+ds
+d
+r
+gf
+fg
+jy
+ry
+e
+r
+sgweg
+wsfgs
+hrhw
+dfd
+dghdgh
+gdh
+dghd
+ghd
+gh
+dgheeye
+yetyru
+dhr
+
+`
