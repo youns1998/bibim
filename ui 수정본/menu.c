@@ -3,7 +3,11 @@
 #define YELLOW SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 #define WHITE SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 #define GRAY SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+#define DO 510
 
+#define MI  660
+
+#define BACK   700
 
 void printkoreanui()
 {
@@ -332,6 +336,8 @@ void TP_menu()
 		switch (tp_menu) {
 		case '1':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -339,6 +345,9 @@ void TP_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -353,6 +362,8 @@ void TP_menu()
 
 		case '2':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -360,6 +371,8 @@ void TP_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -374,6 +387,8 @@ void TP_menu()
 		}
 		case '3':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -381,6 +396,8 @@ void TP_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;;
 				}
@@ -395,6 +412,8 @@ void TP_menu()
 		}
 
 		case'4':
+			Beep(BACK, 100);
+			Beep(BACK, 150);
 			system("cls");
 			return;
 		default:
@@ -418,6 +437,8 @@ void CP_menu()
 		switch (cp_menu) {
 		case '1':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -426,6 +447,8 @@ void CP_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -441,6 +464,8 @@ void CP_menu()
 
 		case '2':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				
@@ -450,6 +475,8 @@ void CP_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -464,6 +491,8 @@ void CP_menu()
 		}
 		case '3':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -472,6 +501,8 @@ void CP_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -486,6 +517,8 @@ void CP_menu()
 		}
 
 		case'4':
+			Beep(BACK, 100);
+			Beep(BACK, 150);
 			system("cls");
 			return;
 		default:
@@ -547,6 +580,8 @@ void rank_menu()
 		switch (rank_menu) {
 		case '1':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -554,6 +589,8 @@ void rank_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -569,6 +606,8 @@ void rank_menu()
 
 		case '2':
 		{
+			Beep(MI, 70);
+			Beep(DO, 100);
 			while (1)
 			{
 				system("cls");
@@ -576,6 +615,8 @@ void rank_menu()
 				printf("esc를 누르면 이전 메뉴로 돌아갑니다\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -586,9 +627,12 @@ void rank_menu()
 
 				}
 			}
+			break;
 		}
 		case '3':
 			system("cls");
+			Beep(BACK, 100);
+			Beep(BACK, 150);
 			return;
 		default:
 			system("cls");

@@ -1,99 +1,330 @@
-#include<stdio.h>
-#include<windows.h>
-#define MAX_LANKER 20
-typedef struct lanking *lankptr;
-typedef struct lanking
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <Windows.h>
+#include <conio.h>
+#define wordmax 103//단어의 개수
+#define wordtime 23000//단어가 뜨는 속도
+
+time_t startTime = 0, endTime = 0;// 게임 시간 제한
+int gap;
+
+void gotoxy(int x, int y)//커서 위치 조정 함수
 {
-	char name[10];
-	int lank;
-	int score;
-	int accuracy;
-}Lanking;
-lankptr *lanklist = NULL;
+	COORD Pos = { x - 1, y - 1 };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
 
-//void long_chat();
-//void code_chat();
-//void go_game();
-//void gotoxy(int x, int y);
-//void go_lanking();
-void main()
-{
-	int select=0;
-	while (1)
-	{
-		printf("............................................................................................,............................................\n");
-		printf("............................................................................................,............................................\n");
-		printf(".......................................................................................,+7$?:.,..........................................\n");
-		printf("..................................................................................,., 7DNNNNN8,..........................................\n");
-		printf(".....................................................................................+NNDZZONNNO:........................................\n");
-		printf(".....................................................................................OMN7777IDMND=,......................................\n");
-		printf("..............................................................,..:=?+=:.,,..,.....,..7MNZ77777ZMNN=..,...................................\n");
-		printf("..............................................................,ONNNNDDND7.............ONNMMDZIIZND8......................................\n");
-		printf("...........................................................,.=8NN87=+IONN8:...........~8DNNNNN87$NN=.....................................\n");
-		printf(".............,,.......,.................,,................,..8ND~......=NNO,..........~DNZ.,?NNNODNO....,,............,..................\n");
-		printf("..............................,.........,....,...............DNO.......,NND,..........:8NO,..:7NNNNN:...,................................\n");
-		printf("................:+7O8NNNNDDOI=...........:IZDNNNNNNND8$+:....8NO.......,NN8,..,=7ODNND8NNO.....~8NNM~....~?O8DNNNNNN8O$=,................\n");
-		printf(".............,=8NNNNNNMNNNNNNND$: ....,INNMNNNNMMNNMNNDNNZ: .8NO.......,NND,.IDNDNNNNNNNNZ......~NNM+..$DDNNNNNNNNNMNNNNNZ~.,............\n");
-		printf("............:8NNN8$+~,...,~?ZNNNN$...+DNNNZ?:,. .. .:=$DDNNZ,DNO.......,DNO=DNDNZ+:,.,~IDZ.......INM+?NDNNO?~,......~?7NNNN$.............\n");
-		printf("........,..7NNN=.. ...........:INND?ZMN8:... ............$NNNNNO.......,DNDND8:........... ......:DNNNN7,...............:$MNO~,..........\n");
-		printf("..........~ND8~................ +NNNNNO,...  ... ....... ,INNNNO.......,NNNND:....... ............DNNN$..........,.... ..,+NN$...........\n");
-		printf(".........,$NN=.......~8NNO, .....:8DDDNZ$ODNNNMMNND~,.  .  INNNO.......,NNNN=.......7NNNZ.........DNN8,.... .,$NMNI....... 7ND=..,.......\n");
-		printf("........,:8ND,.... .,NNNNN$.......?NNNNNNNNNNNNNNNNM=......~NNNO.......,DNN8. .....=NDNDNI .......DNN=.......7NNNNN+.. ....~NN$..........\n");
-		printf(".........=DNO.......,NNNNND,... ..~DNNDNDZ+:,.........     ,8NNO...... ,NNDZ..... .?NNNNNO........NND,..    .ZDDNNN7...   .,NNO,.........\n");
-		printf(".........=NNZ.......,NNNNND,..... ,DDNDI........ .....    ..8NNO...... ,NNN$ .... .?NNNNNO........NND,...   .ZDDNNN7...   .,NND,.........\n");
-		printf(".........=NNZ..... .,NNNNND,......,DNN+... ...?8DN8I,......,8NNO...... ,NNDO.. ....?NNNNNO........NND,.......ZNNNNN7.......,NN8.,........\n");
-		printf(".........=NNZ........MNNDNZ.......~NND,..... ,NNDNNM? .....~NNNO...... ,NNDN:.... .~NNNDMI.......:DNN?.......7MDNDM?.......=NN$..........\n");
-		printf(".........~DNO.........    .......+NNNN$,......... .. .....+MDNNO.......,NNDNN$..................+MNDNN$..................,?MNO...........\n");
-		printf(".........~DN8,... ..............INND8NN8:...............,$NNDDNO.......,NN8OMN8~...............$NDD:8NN7:...............:ZMNO~,..........\n");
-		printf(".........:8ND~..... :NZ=,..,~?DMNMO,.?NNNN8$=~,,,.,~+IONNDM$.ZNND?:..:I8NMI.~8NNDD7=,....,~?ONNNMZ,..=DNNN87+~,.,.,~?78NNDMI,............\n");
-		printf(".........,ONNZ,... .,NNNNNMNNNND8+.,,,.IDNNDNNNNMNNNNNDNN$:.,,$NNNNMMNDND$.,,.IDNNNNNMNNNNNNDNNZ:....,,$DNNNNNNNNMNNNNDMD$:.,............\n");
-		printf(".........,$NDNZ.....,NNN8NNNDZ?:.,,......,=7ODDNNDD8O$+~.......:IZDNDDOI,.......:+Z8DNDNNDDZI~...........:+$O8DNNDD8O7+:.................\n");
-		printf("..........INNNN8~...,NNZ......,,..,...................,,...,..........,...........................,...................,,.................\n");
-		printf("..........=NN8DNNZ=.:NNZ..,....................................,....,,.,,,...................,,.........,................................\n");
-		printf("..........,DNDZODDNNDNM$.,...............,.,......,....,,...,,.............................,.,.,...,.,...................................\n");
-		printf("...........IMNDZ$Z8DDNDN?.............................................,,,........,...............,.......................................\n");
-		printf("........,.,,7NN8ZZZZZODDN:..........,. _______          _               _____                _   _          ,............................\n");
-		printf(".............IMNDZZZZZ8NN+...........,|__   __|        (_)             |  __ Y              | | (_)         .............................\n");
-		printf("........,,,.,.=MNDDOO8NDM:...........    | |_   _ _ __  _ _ __   __ _  | |__) | __ __ _  ___| |_ _  ___ ___ .............................\n");
-		printf("............,,.,$NNDNDND~............    | | | | | '_ Y| | '_ Y / _` | |  ___/ '__/ _` |/ __| __| |/ __/ _ Y,,...........................\n");
-		printf("............,,.,...DNDND~..............  | | |_| | |_) | | | | | (_| | | |   | | | (_| | (__| |_| | (_|  __/,,...........................\n");
-		printf(".......................................  |_|Y__, | .__/|_|_| |_|Y__, | |_|   |_|  Y__,_|Y___|Y__|_|Y___Y___|.............................\n");
-		printf(".....................................        __/ | |             __/ |                                      .............................\n");
-		printf(".....................................       |___/|_|            |___/                                       .............................\n");
+void help();// 도움말
+void gamemain();// 게임메인
+void printword();//단어뜨게 해주는 함수
+void scanword();//단어를 입력 받는 함수
+void design();//게임 디자인
+void start();//게임 시작 초기 화면
+void bestscore();//최고점수 갱신
+void removeCursor();// printf에서 단어를 뜨게할때 커서 제거
 
+char word[256][256] = { "dog", "cat", "bottle", "phone", "robot", "green", "elephant", "include", "sky", "game", "hyomin", "jaemin", "max",//단어 DB
+"knife", "glass", "class", "art", "smart", "bell", "carry", "climb", "between", "blow", "album", "ago", "among", "animal", "any", "box",
+"and", "board", "body", "child", "classmate", "city", "boy", "bridge", "clean",
+"club", "coat", "bright", "coin", "chopstick", "coffee", "cold", "chance", "chalk", "chair", "cheap", "blue",
+"before", "bowl", "aunt", "as", "away", "bicycle", "church", "card", "hold",
+"chose", "come", "drink", "give", "get", "hurt", "lay","had", "feed", "lend", "met", "wsing", "throw", "wet", "tell",
+"set", "wind", "wear", "write", "spend", "stand", "worn", "win", "sweep", "account", "achieve", "across", "accept", "above", "ability", "abuse",
+"abnormal", "absurd", "acceptance", "according", "absent", "nation", "past", "value", "though", "person", "machine", "stand", "null" };
+int wordi[250];//한 번뜬 단어들은 안뜨게 해주기 위해 만들어놈
+int x, y;// gotoxy 의 x값과 y값
+int i;//단어 수
+int j, k;
+int a;//단어 수 와 같은 수 변수
+int s;//kbhit
+int c;//반복문배열
+int x2, y2;// x,y값을 다시 불러올 때 변수
+int g;
+int score1 = 0;//점수
+int h;//초기화면에서 입력 받을때 변수
+int f;// 색깔
+int f2;// 색깔 값을 다시 불러올때 변수
+int sword;
+int level = 1;
+int bestsc = 0;
+char scan[50];
+char remem[256][3] = { 0 };//
 
-		printf("                                      ====================================================================\n");
-		printf("                                                                1 . 긴 글 연습\n");
-		printf("                                                                2 . 코딩 연습\n");
-		printf("                                                                3 . 미니 게임\n");
-		printf("                                                                4 . 랭킹 확인\n");
-		printf("                                                                5 . 프로그램 종료\n");
-		printf("                                      ====================================================================\n");
-		scanf("%d", &select);
-		switch (select)
+int main() {
+	srand((unsigned)time(NULL));
+	system("mode con cols=120 lines=30");
+	design();
+	Sleep(1500);
+	gotoxy(60, 9);
+
+	removeCursor();
+	start();
+	while (1) {
+		gotoxy(60, 15);
+		scanf("%d", &h);
+		gotoxy(60, 15);
+
+		switch (h)
 		{
-		case 1:
-			printf("긴 글 연습을 시작합니다.\n");
-	//		long_chat();
-			break;
-		case 2:
-			printf("코딩 연습을 시작합니다.\n");
-	//		code_chat();
-			break;
-		case 3:
-			printf("미니 게임을 시작합니다.\n");
-	//		go_game();
-			break;
-		case 4:
-			printf("--------------전체 랭킹--------------");
-	//		void go_lanking();
-			break;
-		case 5:
-			return;
+		case 1: score1 = 0; startTime = clock(); gamemain(); gap = 0; break;
+		case 2: help(); break;
+		case 3: bestscore(); break;
+		case 4: return 0; break;
+
 		default:
-			printf("잘못 입력 하셨습니다.\n");
+			printf("올바른 키가 아닙니다!");
 			break;
 		}
 	}
 
+}
+
+
+
+
+void design() {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+	printf("|---------------------------------------------------------------------------------------------------------------------|\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|---------------------------------------------------------------------------------------------------------------------|\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|                                                                                                                     |\n");
+	printf("|---------------------------------------------------------------------------------------------------------------------|");
+
+
+
+}
+
+void help() {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+	system("cls");
+	design();
+	gotoxy(40, 7);
+	printf("-사방팔방 뜨는 단어들을 빨리 입력하여 없애주세요!\n");
+	gotoxy(40, 11);
+	printf("-색마다 점수 배점이 다릅니다!");
+	gotoxy(40, 12);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
+	printf("이 색 : 150점 ");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
+	printf("이 색 : 200점 ");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+	printf("이 색 : 250점 ");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+	printf("이 색 : 300점 ");
+	gotoxy(40, 14);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+	printf("-30초 동안 게임이 진행됩니다!! 끝나면 자동으로 종료됩니다.");
+	gotoxy(40, 15);
+	printf("-최고점수가 저장됩니다. 메인메뉴 3. 점수보기에서 확인 가능합니다.\n");
+	gotoxy(40, 16);
+	printf("-아무키나 누르면 메인 메뉴로 돌아갑니다.\n");
+
+	g = getch();
+	if (_kbhit)
+	{
+		start();
+	}
+
+}
+
+
+void bestscore() {
+	system("cls");
+	design();
+	if (bestsc < score1)
+	{
+		bestsc = score1;
+	}
+	gotoxy(50, 7);
+	printf("최고점수 : %d", bestsc);
+
+	gotoxy(40, 13);
+	printf("아무키나 누르면 메인 메뉴로 돌아갑니다.\n");
+	g = getch();
+	if (_kbhit)
+	{
+		start();
+	}
+
+}
+void gamemain() {
+	system("cls");
+	design();
+	gotoxy(50, 9);
+	printf(" 3초 후 시작 !!");
+	Sleep(1000);
+	system("cls");
+	design();
+	gotoxy(50, 9);
+	printf(" 2초 후 시작 !!");
+	Sleep(1000);
+	system("cls");
+	design();
+	gotoxy(50, 9);
+	printf(" 1초 후 시작 !!");
+	Sleep(1000);
+	system("cls");
+	design();
+	while (1) {
+		printword();
+		scanword();
+	}
+
+
+}
+void printword() {
+	static int check = wordmax;
+	x = rand() % 105 + 5;
+	y = rand() % 19 + 3;
+	i = rand() % wordmax;
+	f = rand() % 4 + 1;
+	if (wordi[i] != 1) {
+		wordi[i] = 1;
+		check--;
+		gotoxy(x, y);
+		for (j = 0; j < 3; j++)
+		{
+			if (j == 0) {
+				remem[i][j] = x;
+			}
+			else if (j == 1) {
+				remem[i][j] = y;
+			}
+			else if (j == 2) {
+				remem[i][j] = f;
+			}
+		}
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), f);
+		printf("%s ", word[i]);
+	}
+}
+
+
+
+
+void scanword() {
+	int p = 0;
+	while (p < wordtime) {
+		p++;
+		i = 0;
+		int scanc;
+		endTime = clock();
+		gap = (float)(endTime - startTime) / (CLOCKS_PER_SEC);
+		if (gap > 30) { //게임지속시간 30s
+			system("cls");
+			design();
+			gotoxy(50, 11);
+			printf("---게 임 종 료---");
+			Sleep(2000);
+			main();
+		}
+
+		if (_kbhit()) {
+			scanc = getch();
+			if (scanc != 8 && scanc != 13) {
+				gotoxy(5, 25);
+				scan[sword++] = scanc;
+				printf("                 ");
+				gotoxy(5, 25);
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+				printf("%s", scan);
+			}
+			else if (scanc == 8) {
+				gotoxy(1, 25);
+				printf("|                                                                                                                     |\n");
+				gotoxy(5, 25);
+				scan[--sword] = scanc;
+				if (sword == -1)
+					sword = 0;
+				printf("%s", scan);
+
+			}
+			else if (scanc == 13) {
+				sword = 0;
+				gotoxy(1, 25);
+				printf("|                                                                                                                     |\n");
+				for (i = 0; i <= wordmax; i++)
+				{
+					if (!strcmp(scan, word[i]))
+					{
+
+						x2 = remem[i][0];
+						y2 = remem[i][1];
+						f2 = remem[i][2];
+
+						gotoxy(x2, y2);
+						printf("          ");
+						gotoxy(1, 25);
+						printf("|                                                                                                                     |\n");
+						switch (f2) {
+						case 1: score1 += 150; break;
+						case 2: score1 += 200; break;
+						case 3: score1 += 250; break;
+						case 4: score1 += 300; break;
+						default: break;
+						}
+						gotoxy(3, 2);
+						SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+						printf("현재점수 :%d", score1);
+
+
+					}
+				}
+				for (i = 0; i < 50; i++) {
+					scan[i] = NULL;
+				}
+			}
+		}
+	}
+}
+void start() {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+	system("cls");
+	design();
+	gotoxy(50, 9);
+	printf(" 1. 게임시작                  \n");
+	gotoxy(50, 10);
+	printf(" 2. 도움말                  \n");
+	gotoxy(50, 11);
+	printf(" 3. 점수 보기                \n");
+	gotoxy(50, 12);
+	printf(" 4. 게임 종료                  \n");
+	gotoxy(50, 14);
+	printf("  키를 누르세요                       \n");
+}
+
+void removeCursor()
+{
+	CONSOLE_CURSOR_INFO curInfo;
+	GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
+	curInfo.bVisible = 0;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &curInfo);
 }

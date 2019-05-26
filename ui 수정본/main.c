@@ -2,7 +2,15 @@
 #include "menu.h"
 #include <windows.h>
 
+#define DO 510
+
+#define MI  660
+
+#define BACK   700
+#include <time.h>
 /*타자 연습 메인 함수*/
+#include "typingsound.h"
+
 
 void main()
 {
@@ -63,29 +71,43 @@ void main()
 		int main_menu;
 	
 		main_menu = _getch();
+		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 		switch (main_menu) {
 		case '1':
+			
+			Beep(MI, 70);
+			Beep(DO, 100);
+			printf("\a");
 			system("cls");
 			TP_menu();
 			break;
 		case '2':
+			Beep(MI, 70);
+			Beep(DO, 100);
 			system("cls");
 			CP_menu();
 			break;
 		case '3':
+			Beep(MI, 70);
+			Beep(DO, 100);
 			system("cls");
 			rank_menu();
 			break;
 		case '4':
+			Beep(MI, 70);
+			Beep(DO, 100);
 			system("cls");
 			while (1)
 			{
 				system("cls");
 				printf("도움말 출력\n");
+
 				printf("esc를 누르면 이전메뉴로 돌아갑니다.\n");
 				if (_getch() == 27)
 				{
+					Beep(BACK, 100);
+					Beep(BACK, 150);
 					system("cls");
 					break;
 				}
@@ -98,6 +120,8 @@ void main()
 			}
 			break;
 		case '5':
+			Beep(MI, 70);
+			Beep(DO, 100);
 			system("cls");
 			printf("시스템 종료\n");
 			system("pause");
