@@ -1,0 +1,24 @@
+﻿  typing_game4ver.c
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(21): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(150): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(172): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(288): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(417): warning C4047: '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(303): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(338): note: 'strncpy' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(304): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(338): note: 'strncpy' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(305): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(318): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(338): note: 'strncpy' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(319): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(331): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.04v\typing_game4ver.c(351): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  Typing Practice Program.vcxproj -> C:\Users\joks1\Desktop\Typing Practice Program Demo 0.04v\Debug\Typing Practice Program.exe
