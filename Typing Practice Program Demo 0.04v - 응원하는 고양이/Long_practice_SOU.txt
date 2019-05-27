@@ -1,0 +1,20 @@
+@
+example
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_CQUEUE_SIZE 8
+typedef struct {
+int key;
+}element;
+`
+@
+difficult
+#include <iostream>
+using namespace std;
+void main()
+{cout << "강재구 교수님은 정말 멋진 분이신 것 같다."<<endl; 
+cout<<"당신은 A+학점을 받았습니다.";
+return 0;}
+`
+
+

@@ -1,0 +1,4 @@
+﻿  mschar.c
+c:\users\user\desktop\팔조비빔2\typing practice program demo 0.04v\mschar.c(6): warning C4101: 'm' :참조되지 않은 지역 변수입니다.
+c:\users\user\desktop\팔조비빔2\typing practice program demo 0.04v\mschar.c(7): warning C4101: 'speed' :참조되지 않은 지역 변수입니다.
+  Typing Practice Program.vcxproj -> C:\Users\user\Desktop\팔조비빔2\Typing Practice Program Demo 0.04v\Debug\Typing Practice Program.exe
