@@ -1,0 +1,26 @@
+﻿  typing_game4ver.c
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(21): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(145): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(171): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(218): warning C4047: '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(296): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(364): warning C4013: 'typingsound'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(431): warning C4047: '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(312): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(338): note: 'strncpy' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(313): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(338): note: 'strncpy' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(314): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(328): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(338): note: 'strncpy' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(329): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(342): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\joks1\desktop\typing practice program demo 0.07v\typing_game4ver.c(363): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  Typing Practice Program.vcxproj -> C:\Users\joks1\Desktop\Typing Practice Program Demo 0.07v\Debug\Typing Practice Program.exe
